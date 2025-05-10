@@ -20,6 +20,9 @@ importers:
       babel-plugin-transform-es2015-arrow-functions:
         specifier: ^6.22.0
         version: 6.22.0
+      babel-plugin-transform-remove-console:
+        specifier: ^6.9.4
+        version: 6.9.4
 
 packages:
 
@@ -138,6 +141,9 @@ packages:
 
   babel-plugin-transform-es2015-arrow-functions@6.22.0:
     resolution: {integrity: sha512-PCqwwzODXW7JMrzu+yZIaYbPQSKjDTAsNNlK2l5Gg9g4rz2VzLnZsStvp/3c46GfXpwkyufb3NCyG9+50FF1Vg==}
+
+  babel-plugin-transform-remove-console@6.9.4:
+    resolution: {integrity: sha512-88blrUrMX3SPiGkT1GnvVY8E/7A+k6oj3MNvUtTIxJflFzXTw1bHkuJ/y039ouhFMp2prRn5cQGzokViYi1dsg==}
 
   babel-runtime@6.26.0:
     resolution: {integrity: sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==}
@@ -385,6 +391,8 @@ snapshots:
   babel-plugin-transform-es2015-arrow-functions@6.22.0:
     dependencies:
       babel-runtime: 6.26.0
+
+  babel-plugin-transform-remove-console@6.9.4: {}
 
   babel-runtime@6.26.0:
     dependencies:
