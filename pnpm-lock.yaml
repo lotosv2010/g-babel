@@ -11,9 +11,15 @@ importers:
       '@babel/core':
         specifier: ^7.27.1
         version: 7.27.1
+      '@babel/helper-module-imports':
+        specifier: ^7.27.1
+        version: 7.27.1
       '@babel/plugin-transform-classes':
         specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.27.1)
+      '@babel/template':
+        specifier: ^7.27.2
+        version: 7.27.2
       '@babel/types':
         specifier: ^7.27.1
         version: 7.27.1

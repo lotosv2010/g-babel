@@ -12,7 +12,9 @@
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
     "@babel/core": "^7.27.1",
+    "@babel/helper-module-imports": "^7.27.1",
     "@babel/plugin-transform-classes": "^7.27.1",
+    "@babel/template": "^7.27.2",
     "@babel/types": "^7.27.1",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-plugin-transform-remove-console": "^6.9.4"
