@@ -1,6 +1,7 @@
 const types = require('@babel/types');
 const importModuleHelper = require('@babel/helper-module-imports');
 const template = require('@babel/template');
+const pathLib = require('path');
 
 /**
  * 自动日志插件，用于在指定的函数或类方法前插入日志记录语句。
@@ -47,9 +48,13 @@ const autoLoggerPlugin = (options = {}) => {
           });
           // 如果遍历完Program，loggerId还是空的，那说明在源码中尚未导入logger模块
           if (!loggerId) {
-            loggerId = importModuleHelper.addDefault(nodePath, options.libName, {
+            const libName = pathLib.relative(
+              state.file.opts.filename,
+              options.libName
+            ).replace(/\\/g, '/');
+            loggerId = importModuleHelper.addDefault(nodePath, libName, {
               // 在Program作用域内生成一个不会与当前作用域内变量重复的变量名
-              nameHint: nodePath.scope.generateUid(options.libName),
+              nameHint: nodePath.scope.generateUid(libName),
             })
           }
           // 使用template模块生成一个ast语法树节点,把一个字符串变成节点

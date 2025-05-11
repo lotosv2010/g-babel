@@ -1,5 +1,6 @@
 const babelCore  = require('@babel/core');
 const autoLoggerPlugin = require('./plugins/babel-plugin-transform-auto-logger');
+const path = require('path');
 
 const code = `
   // import logger from 'logger';
@@ -19,10 +20,11 @@ const code = `
 
 const autoLogger = (code) => {
   return babelCore.transformSync(code, {
+    filename: path.resolve(__dirname, 'test.js'),
     plugins: [
       [autoLoggerPlugin({
         fnNames: ['sum', 'multiply', 'minis', 'divide'], // 默认是all
-        libName: 'logger', // 默认是logger
+        libName: path.resolve(__dirname, './logger'), // 'logger', // 默认是logger
         params: ['a', 'b', 'c'],
       })],
     ],
