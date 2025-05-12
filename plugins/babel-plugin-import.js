@@ -24,9 +24,10 @@ function babelPluginImport() {
         if (node.source.value === libraryName
           && (!types.isImportDefaultSpecifier(specifiers[0]))
         ) {
+          const newLibraryDirectory = libraryDirectory ? `${libraryDirectory}/` : '';
           // 将具名导入转换为默认导入的代码生成逻辑
           const newImportDefaultSpecifier = specifiers.map(specifier => {
-            const statement = `import ${specifier.local.name} from '${libraryName}/${specifier.imported.name}';`
+            const statement = `import ${specifier.local.name} from '${libraryName}/${newLibraryDirectory}${specifier.imported.name}';`
             return template.statement(
               statement
             )();
